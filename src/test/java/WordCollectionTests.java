@@ -7,20 +7,18 @@ import org.testng.annotations.Test;
 public class WordCollectionTests {
     WordsCollection wordsCollection;
     Faker faker;
-    TableFrame tableFrame;
 
     @BeforeTest
-    public void setUp(){
+    public void setUp() {
         faker = new Faker();
         wordsCollection = WordsCollection.getInstance();
     }
 
     @Test
-    public void testAdding() throws Exception{
-        for (int i = 0; i < 10; i++) {
-            wordsCollection.addWord(faker.programmingLanguage().name(),faker.programmingLanguage().name());
+    public void add100Words() {
+        for (int i = 0; i < 100; i++) {
+            wordsCollection.addWord(faker.programmingLanguage().name(), faker.programmingLanguage().name());
         }
-            tableFrame = new TableFrame();
-            Thread.sleep(1000000000);
+        wordsCollection.getWords().forEach(System.out::println);
     }
 }
