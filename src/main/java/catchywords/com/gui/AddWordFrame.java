@@ -17,8 +17,8 @@ public class AddWordFrame extends AbstractFrame {
     private JPanel rightPanel = new JPanel();
     private JPanel lowerButtons = new JPanel();
 
-    public AddWordFrame(String title) {
-        super(title, null);
+    public AddWordFrame() {
+        super("Please enter word", null);
         setSize(400, 168);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
 
@@ -43,12 +43,12 @@ public class AddWordFrame extends AbstractFrame {
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         lowerButtons.setBorder(new EmptyBorder(10, 200, 40, 10));
 
+        cancel.addActionListener(e -> this.setVisible(false));
+        submit.addActionListener(e -> submitAdd());
+
         add(leftPanel);
         add(rightPanel);
         add(lowerButtons);
-
-        cancel.addActionListener(e -> this.setVisible(false));
-        submit.addActionListener(e -> submitAdd());
     }
 
     private void submitAdd() {

@@ -11,6 +11,7 @@ public class AbstractFrame extends JFrame {
         setLayout(layoutManager);
         setResizable(true);
         setLocation(600, 200);
+        setLocation(0, 0);
         setVisible(true);
     }
 

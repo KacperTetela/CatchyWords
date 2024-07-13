@@ -39,7 +39,9 @@ public class GUITests {
 
     @Test
     public void addingWindowsSetup() throws Exception{
-        AddWordFrame addWordFrame = new AddWordFrame("AddingWindow");
+        Thread thread1 = new Thread();
+        thread1.start();
+        AddWordFrame addWordFrame = new AddWordFrame();
         Thread.sleep(1000000);
     }
 }
