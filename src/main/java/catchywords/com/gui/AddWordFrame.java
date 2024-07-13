@@ -1,6 +1,5 @@
 package catchywords.com.gui;
 
-import catchywords.com.model.Word;
 import catchywords.com.model.WordsCollection;
 
 import javax.swing.*;
@@ -55,10 +54,11 @@ public class AddWordFrame extends AbstractFrame {
     private void submitAdd() {
         String englishMeaning = englishMeaningField.getText();
         String polishMeaning = polishMeaningField.getText();
-        if (englishMeaning.isEmpty()) {
-            //dodac boxa ktory wyskakuje
+        if (englishMeaning.isEmpty() || polishMeaning.isEmpty() || englishMeaning.length() < 2 || polishMeaning.length() < 2) {
+            JOptionPane.showMessageDialog(null, "Unable to add word", "", JOptionPane.WARNING_MESSAGE);
+        } else {
+            WordsCollection.getInstance().addWord(englishMeaning, polishMeaning);
+            this.setVisible(false);
         }
-        WordsCollection.getInstance().addWord(englishMeaning, polishMeaning);
-        this.setVisible(false);
     }
 }

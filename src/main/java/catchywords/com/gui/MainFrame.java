@@ -13,5 +13,8 @@ public class MainFrame extends AbstractFrame{
         add(wordsNumber);
         JButton addWordButton = new JButton("Add Word");
         add(addWordButton);
+        //preview
+        //play catch words
+        //play complete on the other side
     }
 }
