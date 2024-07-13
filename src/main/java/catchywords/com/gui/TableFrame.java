@@ -11,6 +11,7 @@ public class TableFrame extends AbstractFrame {
 
     public TableFrame() {
         super("TableFrame");
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         table = new Table(wordsCollection);
         JTable jTable = new JTable(table);
         JScrollPane jScrollPane = new JScrollPane(jTable);

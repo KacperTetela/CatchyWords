@@ -14,6 +14,7 @@ public class MainFrame extends AbstractFrame{
     public MainFrame() {
         super("Catchy Words");
         JLabel wordsNumber = new JLabel("Words counter: " + WordsCollection.getInstance().getWords().size());
+        setSize(800,600);
         add(wordsNumber);
         add(addWordButton);
         addWordButton.addActionListener(e -> new AddWordFrame());
